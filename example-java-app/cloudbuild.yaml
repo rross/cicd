@@ -3,5 +3,3 @@ steps:
   entrypoint: 'pack'
   args: ['build', '--builder=gcr.io/buildpacks/builder', '--verbose', '--publish', 'gcr.io/$PROJECT_ID/hello-app-java:$COMMIT_SHA']
   dir: example-java-app
-  env:
-  - 'GOOGLE_BUILDABLE=example-java-app'
