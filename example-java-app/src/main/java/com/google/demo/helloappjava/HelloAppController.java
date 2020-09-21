@@ -21,6 +21,6 @@ public class HelloAppController {
         } catch (UnknownHostException e) {
             hostname = "error";
         }
-        return "Hello World!<br>Version: 1.1.0<br>Hostname: "+hostname+"<br>";
+        return "Hello World!<br>Version: 1.2.0<br>Hostname: "+hostname+"<br>";
     }
 }
