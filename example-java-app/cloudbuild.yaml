@@ -1,6 +1,6 @@
 steps:
 - name: 'gcr.io/k8s-skaffold/pack'
   entrypoint: 'pack'
-  args: ['build', '--builder=gcr.io/buildpacks/builder', '--verbose', 'gcr.io/$PROJECT_ID/example-app-java']
+  args: ['build', '--builder=gcr.io/buildpacks/builder', '--verbose', 'gcr.io/$PROJECT_ID/example-app-java:$SHORT_SHA']
   dir: example-java-app
-images: ["gcr.io/$PROJECT_ID/example-app-java"]
+images: ["gcr.io/$PROJECT_ID/example-app-java:$SHORT_SHA"]
