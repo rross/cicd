@@ -1,0 +1,31 @@
+steps:
+# build the java app
+- name: 'gcr.io/k8s-skaffold/pack'
+  entrypoint: 'pack'
+  args: ['build', '--builder=gcr.io/buildpacks/builder', '--verbose', 'gcr.io/$PROJECT_ID/example-app-java']
+  dir: example-java-app
+images: ["gcr.io/$PROJECT_ID/example-app-java"]
+# build the go app
+- name: 'gcr.io/k8s-skaffold/pack'
+  entrypoint: 'pack'
+  args: ['build', '--builder=gcr.io/buildpacks/builder', '--verbose', 'gcr.io/$PROJECT_ID/example-go-app']
+  dir: example-go-app
+images: ["gcr.io/$PROJECT_ID/example-go-app"]
+# build the dotnet core app
+- name: 'gcr.io/k8s-skaffold/pack'
+  entrypoint: 'pack'
+  args: ['build', '--builder=gcr.io/buildpacks/builder', '--verbose', 'gcr.io/$PROJECT_ID/example-dotnet-core-app']
+  dir: example-dotnet-core-app
+images: ["gcr.io/$PROJECT_ID/example-dotnet-core-app"]
+# build the node app
+- name: 'gcr.io/k8s-skaffold/pack'
+  entrypoint: 'pack'
+  args: ['build', '--builder=gcr.io/buildpacks/builder', '--verbose', 'gcr.io/$PROJECT_ID/example-node-app']
+  dir: example-node-app
+images: ["gcr.io/$PROJECT_ID/example-node-app"]
+# build the python app
+- name: 'gcr.io/k8s-skaffold/pack'
+  entrypoint: 'pack'
+  args: ['build', '--builder=gcr.io/buildpacks/builder', '--verbose', 'gcr.io/$PROJECT_ID/example-python-app']
+  dir: example-python-app
+images: ["gcr.io/$PROJECT_ID/example-python-app"]
