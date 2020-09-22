@@ -1,0 +1,13 @@
+FROM microsoft/dotnet:2.2-sdk AS build
+WORKDIR /app
+
+# copy everything, restore then build the app
+COPY . .
+COPY ./src ./src
+RUN dotnet restore
+RUN dotnet publish -c Release -o out
+
+FROM microsoft/dotnet:2.2-aspnetcore-runtime AS runtime
+WORKDIR /app
+COPY --from=build /app/out ./
+ENTRYPOINT ["dotnet", "hello-app.dll"]
