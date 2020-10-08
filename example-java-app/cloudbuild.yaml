@@ -3,10 +3,14 @@ steps:
 - name: maven:3-jdk-8
   entrypoint: mvn
   args: ["test"]
+# when using the repo trigger specify the directory
+  dir: /workspace/example-java-app
 # build using Buildpacks
 - name: 'gcr.io/k8s-skaffold/pack'
   entrypoint: 'pack'
   args: ['build', '--builder=gcr.io/buildpacks/builder', '--verbose', 'gcr.io/$PROJECT_ID/example-java-app']
+# when using the repo trigger specify the directory
+  dir: /workspace/example-java-app  
 # Push the container image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/$PROJECT_ID/example-java-app']
