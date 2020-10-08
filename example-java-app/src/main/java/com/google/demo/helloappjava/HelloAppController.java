@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
+import java.text.SimpleDateFormat;  
+import java.util.Date;  
+
 @RestController
 public class HelloAppController {
 
@@ -21,6 +24,12 @@ public class HelloAppController {
         } catch (UnknownHostException e) {
             hostname = "error";
         }
-        return "Hello World!<br>Version: 1.2.0<br>Hostname: "+hostname+"<br>";
+        return "Hello World!<br>Version: 1.2.0<br>Hostname: "+hostname+"<br>Date: "+currentDateAsString()+"<br>";
     }
+	
+	private String currentDateAsString()
+	{
+	    SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
+		return formatter.format(new Date());
+	}
 }
