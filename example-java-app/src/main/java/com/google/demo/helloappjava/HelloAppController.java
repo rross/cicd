@@ -24,7 +24,7 @@ public class HelloAppController {
         } catch (UnknownHostException e) {
             hostname = "error";
         }
-        return "Hello World!<br>Version: 1.2.0<br>Hostname: "+hostname+"<br>Date: "+currentDateAsString()+"<br>";
+        return "Hello World!<br>Version: 1.2.1<br>Hostname: <b>"+hostname+"</b><br>Date: "+currentDateAsString()+"<br>";
     }
 	
 	private String currentDateAsString()
