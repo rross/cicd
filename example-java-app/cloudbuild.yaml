@@ -8,7 +8,7 @@ steps:
 # build using Buildpacks
 - name: 'gcr.io/k8s-skaffold/pack'
   entrypoint: 'pack'
-  args: # ['build', '--builder=gcr.io/buildpacks/builder', '--verbose', 'gcr.io/$PROJECT_ID/example-java-app']
+  args: 
   - 'build'
   - '--builder=gcr.io/buildpacks/builder'
   - '--verbose'
@@ -21,6 +21,16 @@ steps:
 # Deploy container image to Cloud Run
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: gcloud
-  args: ['run', 'deploy', 'example-java-app', '--image', 'gcr.io/$PROJECT_ID/example-java-app', '--region', 'us-central1', '--platform', 'managed', '--allow-unauthenticated']
+  args: # ['run', 'deploy', 'example-java-app', '--image', 'gcr.io/$PROJECT_ID/example-java-app', '--region', 'us-central1', '--platform', 'managed', '--allow-unauthenticated']
+  - 'run'
+  - 'deploy'
+  - 'example-java-app'
+  - '--image'
+  - 'gcr.io/$PROJECT_ID/example-java-app'
+  - '--region'
+  - 'us-central1'
+  - '--platform'
+  - 'managed'
+  - '--allow-unauthenticated'
 # push the image to GCR
 images: ["gcr.io/$PROJECT_ID/example-java-app"]
