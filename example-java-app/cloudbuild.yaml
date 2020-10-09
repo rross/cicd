@@ -17,11 +17,13 @@ steps:
   dir: /workspace/example-java-app  
 # Push the container image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/$PROJECT_ID/example-java-app']
+  args: 
+  - 'push'
+  - 'gcr.io/$PROJECT_ID/example-java-app'
 # Deploy container image to Cloud Run
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: gcloud
-  args: # ['run', 'deploy', 'example-java-app', '--image', 'gcr.io/$PROJECT_ID/example-java-app', '--region', 'us-central1', '--platform', 'managed', '--allow-unauthenticated']
+  args: 
   - 'run'
   - 'deploy'
   - 'example-java-app'
