@@ -36,7 +36,7 @@ public class HelloAppController {
             hostname = "error";
         }
 	    
-	return String.format(HTML_BODY, "Hello World!<br>Version: 1.2.1<br>Hostname: <b>"+hostname+"</b><br>Date: "+currentDateAsString()+"<br>";
+	return String.format(HTML_BODY, "Hello World!<br>Version: 1.2.1<br>Hostname: <b>"+hostname+"</b><br>Date: "+currentDateAsString()+"<br>");
     }
 	
 	private String currentDateAsString()
