@@ -44,7 +44,7 @@ public class HelloAppController {
 	
 	private String currentDateAsString()
 	{
-	    SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
+	    SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");  
 		return formatter.format(new Date());
 	}
 }
