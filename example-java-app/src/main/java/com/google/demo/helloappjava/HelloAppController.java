@@ -20,7 +20,7 @@ public class HelloAppController {
 	    "     Welcome to CI/CD in the Cloud\n" + 
 	    "   </title>\n" + 
 	    "  </head>\n" + 
-	    "  <body style=\"background-color: green; color: white; font-size: 36px;\">\n" + 
+	    "  <body style=\"background-color: DodgerBlue; color: white; font-size: 36px;\">\n" + 
 	    "    <h1 style=\"font-size: 60px; font-weight: bold; \">\n" + 
 	    "      Welcome to CI/CD in the Cloud\n" +
 	    "    </h1>\n" + 
