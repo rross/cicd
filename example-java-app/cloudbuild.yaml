@@ -34,5 +34,6 @@ steps:
   - '--platform'
   - 'managed'
   - '--allow-unauthenticated'
+  - '--no-traffic'
 # push the image to GCR
 images: ["gcr.io/$PROJECT_ID/example-java-app"]
