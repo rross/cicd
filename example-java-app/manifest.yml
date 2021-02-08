@@ -1,0 +1,7 @@
+---
+applications:
+- name: example-java 
+  memory: 1G
+  random-route: true
+  path: target/hello-app-java-0.0.1-SNAPSHOT.jar 
+
